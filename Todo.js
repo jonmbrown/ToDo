@@ -21,7 +21,7 @@ if (Meteor.isServer) {
     return Tasks.find();
   });
 
-  greet(">>> SimpleToDos server is alive");
+  greet(">>> ToDo server is alive");
 
   Meteor.methods({    
     ServerMessage: function(msg){
