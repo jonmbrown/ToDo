@@ -1,0 +1,44 @@
+<!-- simple-todos.html -->
+<head>
+  <title>Todo List</title>  
+  <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+
+<body>
+<div class="container">
+    
+<header>
+  <h1>{{incompleteCount}}</h1>
+  
+<label class="hide-completed">
+  <input type="checkbox" checked="{{hideCompleted}}" /> Hide bought items
+</label>
+
+<form class="new-task">
+  <input type="text" name="text" placeholder="Type to add item" />
+</form>
+</header>
+
+<ul>
+  {{#each tasks}}
+   {{> task}}
+  {{/each}}
+</ul>
+</div>
+</body>
+
+<!-- Original simple template:
+<template name="task">
+  <li>{{text}}</li>
+</template>
+-->
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">{{text}}</span>
+  </li>
+</template>
