@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background-image: linear-gradient(to bottom, lightblue, whitesmoke 100%);
+  background-image: linear-gradient(to bottom, lightblue, white 100%);
   padding: 20px 15px 15px 15px;
   position: relative;
 }
@@ -31,7 +31,7 @@ form {
   border: none;
   width: 100%;
   padding-right: 80px;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .new-task input:focus{
@@ -48,7 +48,7 @@ ul {
   float: right;
   font-weight: bold;
   background: none;
-  font-size: 1em;
+  font-size: 1.5em;
   border: none;
   position: relative;
 }
@@ -63,6 +63,7 @@ li {
 li .text {
   margin-left: 10px;
   text-transform: capitalize; /* Make it look nice */
+  font-size: 1.5em;
 }
 
 li.checked {

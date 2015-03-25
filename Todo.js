@@ -34,7 +34,12 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
   
-  Meteor.subscribe("tasks");
+  Session.set("S-busy", 'Y'); // On startup assume we're busy
+
+  Meteor.subscribe("tasks", function() {
+//      Callback...
+        Session.set("S-busy", 'N'); // Assume we're not busy now    
+  });
 
   Session.set("hideCompleted", true); // Default to hiding bought items
         
@@ -46,6 +51,16 @@ if (Meteor.isClient) {
       } else {
         // Otherwise, return all of the tasks
         return Tasks.find({}, {sort: {text: 1}}); // By creation use: Tasks.find({}, {sort: {createdAt: -1}});
+      }
+    },
+
+    BusySymbol: function () { // Show a busy graphic if we are
+      if (!Session.get("S-busy")) return "busy.gif?2503"; // Starting up...
+        
+      if (Session.get("S-busy") != 'N') {
+        return "busy.gif?2503"; // "Loading data...";
+      } else {
+        return "blank.gif"; // Nothing (ie not busy)
       }
     },
     

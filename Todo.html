@@ -2,7 +2,7 @@
 <head>
 <title>Todo List</title>  
 <link rel="icon" type="image/png" href="/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <!-- JB Dec 2014 - Added to make Bootstrap work on Android Chrome -->
 </head>
 <body>
@@ -19,7 +19,7 @@
   <input type="text" name="text" placeholder="Type to add item" />
 </form>
 </header>
-
+<center><img src='{{BusySymbol}}'></center>
 <ul>
 {{#each tasks}}
 {{> task}}
