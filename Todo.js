@@ -55,10 +55,10 @@ if (Meteor.isClient) {
     },
 
     BusySymbol: function () { // Show a busy graphic if we are
-      if (!Session.get("S-busy")) return "busy.gif?2503"; // Starting up...
+      if (!Session.get("S-busy")) return "busy.gif?2603"; // Starting up...
         
       if (Session.get("S-busy") != 'N') {
-        return "busy.gif?2503"; // "Loading data...";
+        return "busy.gif?2603"; // "Loading data...";
       } else {
         return "blank.gif"; // Nothing (ie not busy)
       }
