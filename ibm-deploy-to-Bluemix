@@ -1,0 +1,21 @@
+echo
+echo USAGE: $0 App Memory -- eg ourtodo 96M
+echo [96M crashes occassionally, 128M used to work with older buildpacks]
+echo
+echo Uploading $1 to Bluemix with $2 as BLUEMIX@...
+echo
+echo 1. Logging onto Bluemix
+cf login -a https://api.ng.bluemix.net -u bluemix@jonmbrown.com -o bluemix@jonmbrown.com -s dev
+echo Jon: cf login -a https://api.ng.bluemix.net -u bluemix@jonmbrown.com -o bluemix@jonmbrown.com -s dev
+echo
+echo Helen Login: cf login -a https://api.ng.bluemix.net -u bluemix@melbournesupervision.com -p BMumba123 -o bluemix@melbournesupervision.com -s dev
+echo
+echo 2. Pushing app to Bluemix
+echo UNUSED cf set-env $1 ROOT_URL http://ourtodo.mybluemix.net
+echo UNUSED cf set-env $1 MONGO_URL mongodb://jbMongo:JBM#umba1@ds034348.mlab.com:34348/AzureMongoLab
+echo UNUSED cf restage $1
+cf push $1 -m $2 -b https://github.com/AdmitHub/meteor-buildpack-horse
+echo Until Apr 2017 was cf push $1 -m $2 -b https://github.com/cloudfoundry-community/cf-meteor-buildpack.git
+echo
+echo 3. Done
+echo
