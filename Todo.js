@@ -4,6 +4,7 @@
 // Jon Brown - Nov / Dec 2014
 //
 // My first Meteor app. It's basically a shopping list
+// 19 Oct 2017 - Meteor 1.5.2.2
 //
 
 // These functions are available on both the client and the server ===========================
