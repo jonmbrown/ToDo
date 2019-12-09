@@ -1,2 +1,2 @@
-export MONGO_URL=mongodb://jbMongo:JBM#umba1@ds034348.mlab.com:34348/AzureMongoLab
+export MONGO_URL=mongodb://jbMongo:JBM%23umba1@ds034348.mlab.com:34348/AzureMongoLab
 meteor $1 $2 $3 $4
